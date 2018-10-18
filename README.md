@@ -1,2 +1,2 @@
 # xthreading
-do i &lt;3 threads?
+i &lt;3 threads
