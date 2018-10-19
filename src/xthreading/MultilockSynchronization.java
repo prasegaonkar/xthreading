@@ -85,7 +85,7 @@ public class MultilockSynchronization {
 			}
 		}
 
-		private synchronized void stage2() {
+		private void stage2() {
 			synchronized (lock2) {
 				try {
 					Thread.sleep(1);
