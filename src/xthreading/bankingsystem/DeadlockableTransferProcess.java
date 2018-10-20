@@ -3,13 +3,13 @@ package xthreading.bankingsystem;
 import java.util.Random;
 import java.util.concurrent.locks.Lock;
 
-public class TransferProcess implements Runnable {
+public class DeadlockableTransferProcess implements Runnable {
 	private Account from;
 	private Account to;
 	private Lock fromLock;
 	private Lock toLock;
 
-	public TransferProcess(Account from, Account to, Lock fromLock, Lock toLock) {
+	public DeadlockableTransferProcess(Account from, Account to, Lock fromLock, Lock toLock) {
 		this.from = from;
 		this.to = to;
 		this.fromLock = fromLock;

@@ -3,15 +3,15 @@ package xthreading.bankingsystem;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Deadlock {
+public class DeadlockSolved {
 	public static void main(String[] args) throws InterruptedException {
 		Account acc1 = new Account();
 		Account acc2 = new Account();
 		Lock lock1 = new ReentrantLock();
 		Lock lock2 = new ReentrantLock();
 
-		Thread t1 = new Thread(new DeadlockableTransferProcess(acc1, acc2, lock1, lock2));
-		Thread t2 = new Thread(new DeadlockableTransferProcess(acc2, acc1, lock2, lock1));
+		Thread t1 = new Thread(new DeadlockFreeTransferProcess(acc1, acc2, lock1, lock2));
+		Thread t2 = new Thread(new DeadlockFreeTransferProcess(acc2, acc1, lock2, lock1));
 
 		t1.start();
 		t2.start();
